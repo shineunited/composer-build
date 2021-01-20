@@ -16,7 +16,7 @@ class AliasTask extends Task {
 
 	public function configure() {
 		$this->addArgument(
-			'task', // name
+			'name', // name
 			InputArgument::REQUIRED, // mode
 			'Task to execute', // description
 			null // default
@@ -25,7 +25,7 @@ class AliasTask extends Task {
 
 	public function execute(InputInterface $input, OutputInterface $output) {
 		$io = $this->getIO();
-		$taskName = $input->getArgument('task');
+		$taskName = $input->getArgument('name');
 
 		$task = $this->getApplication()->find('build:' . $taskName);
 		$taskInput = new ArrayInput(array());

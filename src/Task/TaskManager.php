@@ -49,7 +49,7 @@ class TaskManager {
 
 		if(is_string($config)) {
 			// alias task
-			return new AliasTask($name, array('task' => $config));
+			return new AliasTask($name, array('name' => $config));
 		}
 
 		if(!is_array($config)) {
