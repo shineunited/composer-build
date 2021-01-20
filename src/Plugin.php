@@ -4,6 +4,8 @@ namespace ShineUnited\ComposerBuild;
 
 use ShineUnited\ComposerBuild\Command\CommandProvider;
 use ShineUnited\ComposerBuild\Task\TaskManager;
+use ShineUnited\ComposerBuild\Capability\TaskFactory as TaskFactoryCapability;
+use ShineUnited\ComposerBuild\Task\TaskFactory;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;
@@ -33,7 +35,8 @@ class Plugin implements PluginInterface, Capable {
 
 	public function getCapabilities() {
 		return array(
-			CommandProviderCapability::class => CommandProvider::class
+			CommandProviderCapability::class => CommandProvider::class,
+			TaskFactoryCapability::class     => TaskFactory::class
 		);
 	}
 
